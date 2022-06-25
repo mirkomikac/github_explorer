@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import repositoriesReducer from "./repositoriesReducer";
-import starredRepositoriesReducer from "./starredRepositories";
+import starredRepositoriesReducer from "./starredRepositoriesReducer";
 
 const reducers = combineReducers({
   repositories: repositoriesReducer,

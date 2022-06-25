@@ -7,16 +7,16 @@ import {
   SearchRepositoriesResponse,
 } from "../../shared/apis/github/types";
 
-interface SearchRepositoriesAction {
+export interface SearchRepositoriesAction {
   type: SearchRepositoriesActionType.SEARCH_REPOSITORIES;
 }
 
-interface SearchRepositoriesSuccessAction {
+export interface SearchRepositoriesSuccessAction {
   type: SearchRepositoriesActionType.SEARCH_REPOSITORIES_SUCCESS;
   payload: SearchRepositoriesResponse;
 }
 
-interface SearchRepositoriesErrorAction {
+export interface SearchRepositoriesErrorAction {
   type: SearchRepositoriesActionType.SEARCH_REPOSITORIES_ERROR;
   payload: string;
 }
@@ -30,12 +30,12 @@ export interface StarredRepositores {
   [id: string]: Repository;
 }
 
-interface StarRepositoryAction {
+export interface StarRepositoryAction {
   type: StarRepositoryActionType.REPOSITORY_STARRED;
   payload: StarredRepositores;
 }
 
-interface UnstarRepositoryAction {
+export interface UnstarRepositoryAction {
   type: StarRepositoryActionType.REPOSITORY_UNSTARRED;
   payload: StarredRepositores;
 }

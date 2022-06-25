@@ -3,7 +3,7 @@ import { Repository } from "../../shared/apis/github/types";
 import { StarRepositoryActionType } from "../action-types";
 import { StarredRepositoryAction } from "../actions";
 
-interface StarredRepositoriesState {
+export interface StarredRepositoriesState {
   [key: string]: Repository;
 }
 
@@ -28,8 +28,12 @@ const initialState: StarredRepositoriesState = tryRetreiveFromLocalStorage();
 
 const reducer = (
   state: StarredRepositoriesState = initialState,
-  action: StarredRepositoryAction
+  action?: StarredRepositoryAction
 ): StarredRepositoriesState => {
+  if (!action) {
+    return { ...state };
+  }
+
   switch (action.type) {
     case StarRepositoryActionType.REPOSITORY_STARRED:
       return { ...action.payload };

@@ -2,7 +2,7 @@ import { SearchRepositoriesActionType } from "../action-types";
 import { SearchRepositoryAction } from "../actions";
 import { SearchRepositoriesResponse } from "../../shared/apis/github/types";
 
-interface RepositoriesState {
+export interface RepositoriesState {
   loading: boolean;
   error: string | null;
   data: SearchRepositoriesResponse;
@@ -16,8 +16,12 @@ const initialState: RepositoriesState = {
 
 const reducer = (
   state: RepositoriesState = initialState,
-  action: SearchRepositoryAction
+  action?: SearchRepositoryAction
 ): RepositoriesState => {
+  if(!action){
+    return state;
+  }
+
   switch (action.type) {
     case SearchRepositoriesActionType.SEARCH_REPOSITORIES:
       return {

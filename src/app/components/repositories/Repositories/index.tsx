@@ -71,14 +71,14 @@ const Repositories: React.FC = () => {
       </div>
 
       {showStarred && (
-        <div className="starred-repositories">
+        <div className="starred-repositories" data-testid="starred-repositories">
           <h1>Starred repos</h1>
           <RepositoryList repositories={starredRepoItems} />
         </div>
       )}
 
       {!showStarred && (
-        <div className="trending-repositories">
+        <div className="trending-repositories" data-testid="trending-repositories">
           <h1>Trending repositories</h1>
           <RepositoryList repositories={data.items} />
         </div>
