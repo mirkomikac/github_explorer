@@ -12,6 +12,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Simple responsivnes is achievid via simple media query where the repositories are displayed with flex column based
 - GitHub mark and GitHub free integration logos are being used
 - Wanted to make a demo via Veed but couldn't due to workspace issues
+- Component testing added
 
 ## Development notes
 - .nvmrc can be used for proper `node -v` selection
@@ -23,7 +24,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Go with the path alias setup
 - SCSS setup with better BEM notation following
 - Project structuring with component folders instead of plain files
-- Testing of components behaviour and reducers
+- Redux integration tests missing
 
 ## Tests
 Work in progress
