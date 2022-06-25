@@ -1,0 +1,108 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  border: solid 1px lightgray;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .item {
+    flex-direction: column;
+  }
+}
+
+.starred-repositories {
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.starred-repositories > h1 {
+  text-align: center;
+}
+
+.starred-repositories-action {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.starred-repositories-action__toggle {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.repository {
+  flex: 0 1 70%;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.owner {
+  flex: 0 1 30%;
+  padding-left: 10px;
+  margin: 10px;
+}
+
+.item .item__part.repository .repository__type {
+  font-style: italic;
+  font-size: 20px;
+}
+
+.repository__starred {
+  color: green;
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+.repository__stars-count {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 3px 8px;
+}
+
+.repository__star {
+  background-color: white;
+  border-radius: 3px;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid green;
+}
+
+.repository__unstar {
+  background-color: white;
+  border-radius: 3px;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid coral;
+}
+
+.card {
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 1px lightgray;
+}
+
+.card .card__name {
+  margin: 0;
+}
+
+.card .card__data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.card__data .card__type {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.card .card__avatar {
+  height: 96px;
+  width: 96px;
+}
