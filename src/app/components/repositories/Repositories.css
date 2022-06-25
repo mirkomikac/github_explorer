@@ -17,7 +17,7 @@
   padding: 15px;
 }
 
-.starred-repositories > h1 {
+.starred-repositories > h1, .trending-repositories > h1 {
   text-align: center;
 }
 

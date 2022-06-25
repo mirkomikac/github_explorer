@@ -35,7 +35,6 @@ const Repositories: React.FC = () => {
   const starredRepoItems = Object.values(starredRepositories);
   const { data } = repositories;
 
-  const hasItems = !!data?.items;
   const hasStarredRepositories = !!starredRepoItems.length;
 
   useEffect(() => {
@@ -64,16 +63,14 @@ const Repositories: React.FC = () => {
         />
       </header>
 
-      {hasStarredRepositories && (
-        <div className="starred-repositories-action">
-          <button
-            className="starred-repositories-action__toggle"
-            onClick={() => setShowStarred(!showStarred)}
-          >
-            {showStarred ? "Show all" : "Show starred"}
-          </button>
-        </div>
-      )}
+      <div className="starred-repositories-action">
+        <button
+          className="starred-repositories-action__toggle"
+          onClick={() => setShowStarred(!showStarred)}
+        >
+          {showStarred ? "Show all" : "Show starred"}
+        </button>
+      </div>
 
       {showStarred && (
         <div className="starred-repositories">
