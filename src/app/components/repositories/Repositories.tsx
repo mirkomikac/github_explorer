@@ -35,8 +35,6 @@ const Repositories: React.FC = () => {
   const starredRepoItems = Object.values(starredRepositories);
   const { data } = repositories;
 
-  const hasStarredRepositories = !!starredRepoItems.length;
-
   useEffect(() => {
     searchRepositories(defaultTrendingQueryParams());
   }, []);
@@ -48,15 +46,15 @@ const Repositories: React.FC = () => {
   const searchRepositoriesByLanguage = (language: string) => {
     const languageQueryParams = defaultTrendingQueryParams();
     languageQueryParams.q = `${languageQueryParams.q}+language:${language}`;
-
     searchRepositories(languageQueryParams);
+    setShowStarred(false);
   };
 
   return (
     <section>
       <header>
         <Search
-          label={"Search by language"}
+          label={"Search trending by language"}
           items={languageSearchItems}
           placeholder="Javascript..."
           onItemSelected={onLanguageSelected}
