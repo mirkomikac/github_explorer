@@ -1,6 +1,6 @@
 import React from "react";
-import { Repository } from "../../shared/apis/github/types";
-import RepositoryItem from "./RepositoryItem";
+import { Repository } from "../../../shared/apis/github/types";
+import RepositoryItem from "../RepositoryItem";
 
 export interface RepositoryListProps {
   repositories: Repository[];

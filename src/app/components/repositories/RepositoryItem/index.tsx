@@ -1,16 +1,17 @@
 import React from "react";
-import { useActions } from "../../hooks/useActions";
-import { useTypedSelector } from "../../hooks/useTypedSelector";
-import { Repository } from "../../shared/apis/github/types";
-import OwnerCard from "./OwnerCard";
-import "./Repositories.css";
+import { useActions } from "../../../hooks/useActions";
+import { useTypedSelector } from "../../../hooks/useTypedSelector";
+import { Repository } from "../../../shared/apis/github/types";
+import OwnerCard from "../OwnerCard";
+import "../Repositories.css";
 
 export interface RepositoryItemProps {
   repository: Repository;
 }
 
 const RepositoryItem: React.FC<RepositoryItemProps> = ({ repository }) => {
-  const { id, name, full_name, owner, url, topics, license } = repository;
+  const { id, name, full_name, owner, url, topics, license, description } =
+    repository;
 
   const starredRepositories = useTypedSelector(
     (state) => state.starredRepositories
@@ -44,7 +45,7 @@ const RepositoryItem: React.FC<RepositoryItemProps> = ({ repository }) => {
             {repository.private ? `Private repo` : `Public repo`}
           </p>
 
-          <p>{repository.description}</p>
+          <p>{description}</p>
 
           {hasTopics && (
             <p className="repository__topics">[{topics.join(",")}]</p>

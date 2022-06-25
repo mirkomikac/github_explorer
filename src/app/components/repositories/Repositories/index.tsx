@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useActions } from "../../hooks/useActions";
-import { SearchRepositoriesParams } from "../../state/action-creators";
-import Search, { SearchItem } from "../shared/Search";
-import RepositoryList from "./RepositoryList";
-import { getDateOnlyISOStringOneWeekAgo } from "../../shared/helpers/datetime";
-import { useTypedSelector } from "../../hooks/useTypedSelector";
-import { languages } from "../../shared/apis/github/languages";
-import "./Repositories.css";
+import { SearchRepositoriesParams } from "../../../state/action-creators";
+import { useActions } from "../../../hooks/useActions";
+import { useTypedSelector } from "../../../hooks/useTypedSelector";
+import { getDateOnlyISOStringOneWeekAgo } from "../../../shared/helpers/datetime";
+import { languages } from "../../../shared/apis/github/languages";
+import Search, { SearchItem } from "../../shared/Search";
+import RepositoryList from "../RepositoryList";
+import "../Repositories.css";
 
 const languageSearchItems: SearchItem[] = languages.map((l) => ({
   id: l.id,

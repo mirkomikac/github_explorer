@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
-import Repositories from "./Repositories";
-import { store } from "../../state";
+import { store } from "../../../state";
+import Repositories from ".";
 
 test("renders initial empty state repository", () => {
   render(

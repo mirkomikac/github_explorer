@@ -41,11 +41,18 @@ const Search: React.FC<SearchProps> = ({
       i.text.toLowerCase().includes(debouncedTerm.toLowerCase())
     );
 
+    const noResultsFound = !results || !results.length;
+
+    if(noResultsFound){
+      return <div style={{ visibility: "hidden"}} data-testid="search-results-no-results"/>;
+    }
+
     const liItemRender = (item: SearchItem) => (
       <span
         className="search__result"
         key={item.id}
         onClick={() => onItemSelected(item)}
+        data-testid="search-result-item"
       >
         {item.text}
       </span>
@@ -61,13 +68,13 @@ const Search: React.FC<SearchProps> = ({
   return (
     <div className="search">
       <h1 className="search__label">{label}</h1>
-      <input
+      <input data-testid="search-input"
         className="search__input"
         placeholder={placeholder}
         type="text"
         onChange={onInputChanged}
       />
-      <div className="search__results">{renderSearchResults()}</div>
+      <div className="search__results" data-testid="search-results">{renderSearchResults()}</div>
     </div>
   );
 };
