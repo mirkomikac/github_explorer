@@ -1,4 +1,4 @@
-import { GITHUB_STARRED_REPOS_LOCAL_STORAGE_KEY } from "../../shared/apis/github/github";
+import { GITHUB_STARRED_REPOS_LOCAL_STORAGE_KEY } from "../../shared/constants";
 import { Repository } from "../../shared/apis/github/types";
 import { StarRepositoryActionType } from "../action-types";
 import { StarredRepositoryAction } from "../actions";

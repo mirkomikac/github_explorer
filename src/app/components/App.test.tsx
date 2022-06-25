@@ -1,8 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("renders learn react link", () => {
+test("renders initial screen", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  const header = screen.getByText("GitHub Trending Repositories");
+  const integratedWithGitHubSubtextsHeaderFooter = screen.getAllByText(
+    "Integrated with GitHub API"
+  );
+
+  expect(header).toBeInTheDocument();
+  expect(integratedWithGitHubSubtextsHeaderFooter).toHaveLength(2);
 });

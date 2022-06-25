@@ -1,9 +1,8 @@
 import { Dispatch } from "redux";
 import qs from "qs";
 
-import githubApi, {
-  GITHUB_STARRED_REPOS_LOCAL_STORAGE_KEY,
-} from "../../shared/apis/github/github";
+import githubApi from "../../shared/apis/github/github";
+import { GITHUB_STARRED_REPOS_LOCAL_STORAGE_KEY } from "../../shared/constants";
 import {
   SearchRepositoriesActionType,
   StarRepositoryActionType,

@@ -11,12 +11,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - List of languages is tracked locally as it is available witing lingust (https://github.com/github/linguist), only one language selection is currently supported
 - Simple responsivnes is achievid via simple media query where the repositories are displayed with flex column based
 - GitHub mark and GitHub free integration logos are being used
+- Wanted to make a demo via Veed but couldn't due to workspace issues
 
 ## Development notes
 - .nvmrc can be used for proper `node -v` selection
 - .prettier
 - package-lock.json is included
 - package versions should be locked
+
+## Further improvements
+- Go with the path alias setup
+- SCSS setup with better BEM notation following
+- Project structuring with component folders instead of plain files
+- Testing of components behaviour and reducers
 
 ## Tests
 Work in progress

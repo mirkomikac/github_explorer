@@ -9,10 +9,13 @@ const App: React.FC = () => {
     <Provider store={store}>
       <main>
         <header className="app__header">
-          <h1>Github Trending Repositories</h1>
-          <img src={process.env.PUBLIC_URL + "/github/GitHub-Mark-Light-64px.png"} />
+          <h1>GitHub Trending Repositories</h1>
+          <img
+            src={process.env.PUBLIC_URL + "/github/GitHub-Mark-Light-64px.png"}
+          />
           <p>Integrated with GitHub API</p>
         </header>
+
         <Repositories />
 
         <footer className="app__footer">

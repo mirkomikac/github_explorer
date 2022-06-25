@@ -1,10 +1,8 @@
 import axios from "axios";
+import { GITHUB_BASE_URL } from "../../constants";
 
 const githubApi = axios.create({
-  baseURL: "https://api.github.com",
+  baseURL: GITHUB_BASE_URL,
 });
-
-export const GITHUB_STARRED_REPOS_LOCAL_STORAGE_KEY: string =
-  "github-trending-starred";
 
 export default githubApi;
