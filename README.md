@@ -12,7 +12,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Simple responsivnes is achievid via simple media query where the repositories are displayed with flex column based
 - GitHub mark and GitHub free integration logos are being used
 - Wanted to make a demo via Veed but couldn't due to workspace issues
-- Component testing added
+
 
 ## Development notes
 - .nvmrc can be used for proper `node -v` selection
@@ -23,6 +23,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Redux state testing within components needs further work
 - Per redux documentation wrapped rendering with Provider with preloaded state
 - Better testing in terms of state changes should be included
+- Component testing added
+- Reducer testing added
 
 ```
 const UI = () => {
@@ -43,7 +45,9 @@ const UI = () => {
 - Project structuring with component folders instead of plain files
 
 ## Tests
-Work in progress
+- Component testing
+- Reducer tests
+- Axios instance mocking with jest issues 
 
 ## External library packages used
 - Axios 
