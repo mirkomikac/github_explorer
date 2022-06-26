@@ -1,17 +1,11 @@
-import { render, screen } from "@testing-library/react";
-import { Provider } from "react-redux";
-import { store } from "../../../state";
+import { render, screen } from "../../../state/reducers/redux-mock-test-util";
 import { Repository } from "../../../shared/apis/github/types";
 import RepositoryList from ".";
 
 test("renders properly the repository list", () => {
   const repositories: Repository[] = [...mockRepositoryList];
 
-  render(
-    <Provider store={store}>
-      <RepositoryList repositories={repositories} />
-    </Provider>
-  );
+  render(<RepositoryList repositories={repositories} />);
 
   const expectedElementCount = repositories.length;
   const elementCount = screen.getAllByText(/Repository Test/i).length;
@@ -21,11 +15,7 @@ test("renders properly the repository list", () => {
 test("renders empty state", () => {
   const repositories: Repository[] = [];
 
-  render(
-    <Provider store={store}>
-      <RepositoryList repositories={repositories} />
-    </Provider>
-  );
+  render(<RepositoryList repositories={repositories} />);
 
   const noItemsToDisplay = screen.getByText("No repositories to display!");
   expect(noItemsToDisplay).toBeInTheDocument();

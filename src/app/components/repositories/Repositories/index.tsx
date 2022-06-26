@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { SearchRepositoriesParams } from "../../../state/action-creators";
 import { useActions } from "../../../hooks/useActions";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
@@ -33,9 +33,9 @@ const Repositories: React.FC = () => {
   );
 
   const starredRepoItems = Object.values(starredRepositories);
-  const { data } = repositories;
+  const { data, loading, error } = repositories;
 
-  useEffect(() => {
+  React.useEffect(() => {
     searchRepositories(defaultTrendingQueryParams());
   }, []);
 
@@ -50,17 +50,19 @@ const Repositories: React.FC = () => {
     setShowStarred(false);
   };
 
-  return (
-    <section>
-      <header>
-        <Search
-          label={"Search trending by language"}
-          items={languageSearchItems}
-          placeholder="Javascript..."
-          onItemSelected={onLanguageSelected}
-        />
-      </header>
+  const renderSearch = () => {
+    return (
+      <Search
+        label={"Search trending by language"}
+        items={languageSearchItems}
+        placeholder="Javascript..."
+        onItemSelected={onLanguageSelected}
+      />
+    );
+  };
 
+  const renderSelectReposTypeOption = () => {
+    return (
       <div className="starred-repositories-action">
         <button
           className="starred-repositories-action__toggle"
@@ -69,20 +71,54 @@ const Repositories: React.FC = () => {
           {showStarred ? "Show all" : "Show starred"}
         </button>
       </div>
+    );
+  };
 
-      {showStarred && (
-        <div className="starred-repositories" data-testid="starred-repositories">
+  const renderRepositories = () => {
+    if (loading) {
+      return (
+        <div data-testid="loading-data-state">
+          <h1>Loading data</h1>
+        </div>
+      );
+    }
+
+    if (error) {
+      return (
+        <div data-testid="data-retrieving-error-state">
+          <h1>An error has occured while loading data</h1>
+        </div>
+      );
+    }
+
+    if (showStarred) {
+      return (
+        <div
+          className="starred-repositories"
+          data-testid="starred-repositories"
+        >
           <h1>Starred repos</h1>
           <RepositoryList repositories={starredRepoItems} />
         </div>
-      )}
+      );
+    }
 
-      {!showStarred && (
-        <div className="trending-repositories" data-testid="trending-repositories">
-          <h1>Trending repositories</h1>
-          <RepositoryList repositories={data.items} />
-        </div>
-      )}
+    return (
+      <div
+        className="trending-repositories"
+        data-testid="trending-repositories"
+      >
+        <h1>Trending repositories</h1>
+        <RepositoryList repositories={data.items} />
+      </div>
+    );
+  };
+
+  return (
+    <section>
+      <header>{renderSearch()}</header>
+      {renderSelectReposTypeOption()}
+      {renderRepositories()}
     </section>
   );
 };

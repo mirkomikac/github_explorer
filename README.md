@@ -19,12 +19,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - .prettier
 - package-lock.json is included
 - package versions should be locked
+- adder reducer tests
+- Redux state testing within components needs further work
 
 ## Further improvements
 - Go with the path alias setup
 - SCSS setup with better BEM notation following
 - Project structuring with component folders instead of plain files
-- Redux integration tests missing
 
 ## Tests
 Work in progress
