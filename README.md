@@ -21,7 +21,22 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - package versions should be locked
 - adder reducer tests
 - Redux state testing within components needs further work
+- Per redux documentation wrapped rendering with Provider with preloaded state
+- Better testing in terms of state changes should be included
 
+```
+const UI = () => {
+    const someData = useSelector(state => state.someData)
+    const dispatch = useDispatch()
+
+    return (<>
+        <div data-testid="neki-id">
+              {someData}
+        </div>
+        <button data-testid="some-btn" onClick={() => dispatch(actionChangingSomeData))}>Change some data</button>
+</>)
+}
+```
 ## Further improvements
 - Go with the path alias setup
 - SCSS setup with better BEM notation following
