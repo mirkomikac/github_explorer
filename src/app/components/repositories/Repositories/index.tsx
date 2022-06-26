@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SearchRepositoriesParams } from "../../../state/action-creators";
 import { useActions } from "../../../hooks/useActions";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
@@ -35,7 +35,7 @@ const Repositories: React.FC = () => {
   const starredRepoItems = Object.values(starredRepositories);
   const { data, loading, error } = repositories;
 
-  React.useEffect(() => {
+  useEffect(() => {
     searchRepositories(defaultTrendingQueryParams());
   }, []);
 
