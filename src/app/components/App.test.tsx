@@ -6,7 +6,7 @@ test("renders initial screen", () => {
 
   const header = screen.getByText("GitHub Trending Repositories");
   const integratedWithGitHubSubtextsHeaderFooter = screen.getAllByText(
-    "Integrated with GitHub API"
+    "Integrated with GitHub API",
   );
 
   expect(header).toBeInTheDocument();

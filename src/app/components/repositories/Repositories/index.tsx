@@ -28,9 +28,10 @@ const Repositories: React.FC = () => {
   const [showStarred, setShowStarred] = useState<boolean>(false);
 
   const { searchRepositories } = useActions();
-  const { repositories, starredRepositories } = useTypedSelector(
-    (state) => state
-  );
+
+  const repositories = useTypedSelector((state) => state.repositories);
+
+  const starredRepositories = useTypedSelector((state) => state.starredRepositories);
 
   const starredRepoItems = Object.values(starredRepositories);
   const { data, loading, error } = repositories;
@@ -93,10 +94,7 @@ const Repositories: React.FC = () => {
 
     if (showStarred) {
       return (
-        <div
-          className="starred-repositories"
-          data-testid="starred-repositories"
-        >
+        <div className="starred-repositories" data-testid="starred-repositories">
           <h1>Starred repos</h1>
           <RepositoryList repositories={starredRepoItems} />
         </div>
@@ -104,10 +102,7 @@ const Repositories: React.FC = () => {
     }
 
     return (
-      <div
-        className="trending-repositories"
-        data-testid="trending-repositories"
-      >
+      <div className="trending-repositories" data-testid="trending-repositories">
         <h1>Trending repositories</h1>
         <RepositoryList repositories={data.items} />
       </div>

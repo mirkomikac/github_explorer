@@ -40,8 +40,7 @@ const mockOwner: Owner = {
   url: "https://api.github.com/users/gluon-api",
   html_url: "https://github.com/gluon-api",
   followers_url: "https://api.github.com/users/gluon-api/followers",
-  following_url:
-    "https://api.github.com/users/gluon-api/following{/other_user}",
+  following_url: "https://api.github.com/users/gluon-api/following{/other_user}",
   gists_url: "https://api.github.com/users/gluon-api/gists{/gist_id}",
   starred_url: "https://api.github.com/users/gluon-api/starred{/owner}{/repo}",
   subscriptions_url: "https://api.github.com/users/gluon-api/subscriptions",

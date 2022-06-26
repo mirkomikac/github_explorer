@@ -4,13 +4,7 @@ import Search, { SearchItem } from ".";
 test("renders search component properly", () => {
   const itemSelected = () => {};
   const label = "SearchLabel";
-  render(
-    <Search
-      items={[...mockItems]}
-      label={label}
-      onItemSelected={itemSelected}
-    />
-  );
+  render(<Search items={[...mockItems]} label={label} onItemSelected={itemSelected} />);
 
   const properLabel = screen.getByText(label);
   expect(properLabel).toBeInTheDocument();
@@ -20,13 +14,7 @@ test("renders result on change properly", async () => {
   const itemSelected = () => {};
   const label = "SearchLabel";
 
-  render(
-    <Search
-      items={[...mockItems]}
-      label={label}
-      onItemSelected={itemSelected}
-    />
-  );
+  render(<Search items={[...mockItems]} label={label} onItemSelected={itemSelected} />);
 
   const expectedResultsCount = 1;
   const searchElement = screen.getByTestId("search-input");
@@ -39,7 +27,7 @@ test("renders result on change properly", async () => {
       const results = await screen.findAllByTestId("search-result-item");
       expect(results).toHaveLength(expectedResultsCount);
     },
-    { timeout: 2000 }
+    { timeout: 2000 },
   );
 });
 
@@ -47,13 +35,7 @@ test("renders multiple results on change properly", async () => {
   const itemSelected = (item: SearchItem) => {};
   const label = "SearchLabel";
 
-  render(
-    <Search
-      items={[...mockItems]}
-      label={label}
-      onItemSelected={itemSelected}
-    />
-  );
+  render(<Search items={[...mockItems]} label={label} onItemSelected={itemSelected} />);
 
   const expectedResultsCount = 2;
   const searchElement = screen.getByTestId("search-input");
@@ -66,7 +48,7 @@ test("renders multiple results on change properly", async () => {
       const results = await screen.findAllByTestId("search-result-item");
       expect(results).toHaveLength(expectedResultsCount);
     },
-    { timeout: 2000 }
+    { timeout: 2000 },
   );
 });
 
@@ -74,13 +56,7 @@ test("renders no results on no matches", async () => {
   const itemSelected = () => {};
   const label = "SearchLabel";
 
-  render(
-    <Search
-      items={[...mockItems]}
-      label={label}
-      onItemSelected={itemSelected}
-    />
-  );
+  render(<Search items={[...mockItems]} label={label} onItemSelected={itemSelected} />);
 
   const searchElement = screen.getByTestId("search-input");
   fireEvent.change(searchElement, {
@@ -92,7 +68,7 @@ test("renders no results on no matches", async () => {
       const result = await screen.findByTestId("search-results-no-results");
       expect(result).toBeInTheDocument();
     },
-    { timeout: 2000 }
+    { timeout: 2000 },
   );
 });
 
@@ -100,13 +76,7 @@ test("properly selects the searched value", async () => {
   const itemSelected = jest.fn();
   const label = "SearchLabel";
 
-  render(
-    <Search
-      items={[...mockItems]}
-      label={label}
-      onItemSelected={itemSelected}
-    />
-  );
+  render(<Search items={[...mockItems]} label={label} onItemSelected={itemSelected} />);
 
   const searchElement = screen.getByTestId("search-input");
   fireEvent.change(searchElement, {
@@ -120,7 +90,7 @@ test("properly selects the searched value", async () => {
       fireEvent.click(result);
       expect(itemSelected).toBeCalled();
     },
-    { timeout: 2000 }
+    { timeout: 2000 },
   );
 });
 

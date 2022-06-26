@@ -16,9 +16,9 @@ const initialState: RepositoriesState = {
 
 const reducer = (
   state: RepositoriesState = initialState,
-  action?: SearchRepositoryAction
+  action?: SearchRepositoryAction,
 ): RepositoriesState => {
-  if(!action){
+  if (!action) {
     return state;
   }
 

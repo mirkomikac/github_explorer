@@ -28,7 +28,7 @@ const initialState: StarredRepositoriesState = tryRetreiveFromLocalStorage();
 
 const reducer = (
   state: StarredRepositoriesState = initialState,
-  action?: StarredRepositoryAction
+  action?: StarredRepositoryAction,
 ): StarredRepositoriesState => {
   if (!action) {
     return { ...state };

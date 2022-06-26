@@ -16,7 +16,7 @@ function render(
     preloadedState,
     store = createStore(reducers, preloadedState, applyMiddleware(thunk)),
     ...renderOptions
-  }: any = {}
+  }: any = {},
 ) {
   function Wrapper({ children }: WrapperProps): JSX.Element {
     return <Provider store={store}>{children}</Provider>;
@@ -24,8 +24,5 @@ function render(
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
 }
 
-// re-export everything
 export * from "@testing-library/react";
-
-// override render method
 export { render };

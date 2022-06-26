@@ -30,7 +30,7 @@ const UI = () => {
     const dispatch = useDispatch()
 
     return (<>
-        <div data-testid="neki-id">
+        <div data-testid="some-id">
               {someData}
         </div>
         <button data-testid="some-btn" onClick={() => dispatch(actionChangingSomeData))}>Change some data</button>

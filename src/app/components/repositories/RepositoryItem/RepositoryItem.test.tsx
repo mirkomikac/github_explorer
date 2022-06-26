@@ -10,16 +10,14 @@ test("renders properly the repository item", () => {
   render(
     <Provider store={store}>
       <RepositoryItem repository={repository} />
-    </Provider>
+    </Provider>,
   );
 
   const properName = screen.getByText("api-gluon-testing");
   const properFullName = screen.getByText("gluon-api/gluon-api");
-  const properUrl = screen.getByText(
-    "https://api.github.com/repos/gluon-api/gluon-api"
-  );
+  const properUrl = screen.getByText("https://api.github.com/repos/gluon-api/gluon-api");
   const properDescription = screen.getByText(
-    "A clear, concise, simple yet powerful and efficient API for deep learning."
+    "A clear, concise, simple yet powerful and efficient API for deep learning.",
   );
   const properStarsCount = screen.getByText(/2322111/i);
   const properPublicPrivateText = screen.getByText("Public repo");
@@ -47,23 +45,19 @@ const mockRepository: Repository = {
     url: "https://api.github.com/users/gluon-api",
     html_url: "https://github.com/gluon-api",
     followers_url: "https://api.github.com/users/gluon-api/followers",
-    following_url:
-      "https://api.github.com/users/gluon-api/following{/other_user}",
+    following_url: "https://api.github.com/users/gluon-api/following{/other_user}",
     gists_url: "https://api.github.com/users/gluon-api/gists{/gist_id}",
-    starred_url:
-      "https://api.github.com/users/gluon-api/starred{/owner}{/repo}",
+    starred_url: "https://api.github.com/users/gluon-api/starred{/owner}{/repo}",
     subscriptions_url: "https://api.github.com/users/gluon-api/subscriptions",
     organizations_url: "https://api.github.com/users/gluon-api/orgs",
     repos_url: "https://api.github.com/users/gluon-api/repos",
     events_url: "https://api.github.com/users/gluon-api/events{/privacy}",
-    received_events_url:
-      "https://api.github.com/users/gluon-api/received_events",
+    received_events_url: "https://api.github.com/users/gluon-api/received_events",
     type: "Organization",
     site_admin: false,
   },
   html_url: "https://github.com/gluon-api/gluon-api",
-  description:
-    "A clear, concise, simple yet powerful and efficient API for deep learning.",
+  description: "A clear, concise, simple yet powerful and efficient API for deep learning.",
   fork: false,
   url: "https://api.github.com/repos/gluon-api/gluon-api",
   forks_url: "https://api.github.com/repos/gluon-api/gluon-api/forks",
@@ -72,57 +66,38 @@ const mockRepository: Repository = {
     "https://api.github.com/repos/gluon-api/gluon-api/collaborators{/collaborator}",
   teams_url: "https://api.github.com/repos/gluon-api/gluon-api/teams",
   hooks_url: "https://api.github.com/repos/gluon-api/gluon-api/hooks",
-  issue_events_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/issues/events{/number}",
+  issue_events_url: "https://api.github.com/repos/gluon-api/gluon-api/issues/events{/number}",
   events_url: "https://api.github.com/repos/gluon-api/gluon-api/events",
-  assignees_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/assignees{/user}",
-  branches_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/branches{/branch}",
+  assignees_url: "https://api.github.com/repos/gluon-api/gluon-api/assignees{/user}",
+  branches_url: "https://api.github.com/repos/gluon-api/gluon-api/branches{/branch}",
   tags_url: "https://api.github.com/repos/gluon-api/gluon-api/tags",
   blobs_url: "https://api.github.com/repos/gluon-api/gluon-api/git/blobs{/sha}",
-  git_tags_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/git/tags{/sha}",
-  git_refs_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/git/refs{/sha}",
+  git_tags_url: "https://api.github.com/repos/gluon-api/gluon-api/git/tags{/sha}",
+  git_refs_url: "https://api.github.com/repos/gluon-api/gluon-api/git/refs{/sha}",
   trees_url: "https://api.github.com/repos/gluon-api/gluon-api/git/trees{/sha}",
-  statuses_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/statuses/{sha}",
+  statuses_url: "https://api.github.com/repos/gluon-api/gluon-api/statuses/{sha}",
   languages_url: "https://api.github.com/repos/gluon-api/gluon-api/languages",
   stargazers_url: "https://api.github.com/repos/gluon-api/gluon-api/stargazers",
-  contributors_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/contributors",
-  subscribers_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/subscribers",
-  subscription_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/subscription",
+  contributors_url: "https://api.github.com/repos/gluon-api/gluon-api/contributors",
+  subscribers_url: "https://api.github.com/repos/gluon-api/gluon-api/subscribers",
+  subscription_url: "https://api.github.com/repos/gluon-api/gluon-api/subscription",
   commits_url: "https://api.github.com/repos/gluon-api/gluon-api/commits{/sha}",
-  git_commits_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/git/commits{/sha}",
-  comments_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/comments{/number}",
-  issue_comment_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/issues/comments{/number}",
-  contents_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/contents/{+path}",
-  compare_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/compare/{base}...{head}",
+  git_commits_url: "https://api.github.com/repos/gluon-api/gluon-api/git/commits{/sha}",
+  comments_url: "https://api.github.com/repos/gluon-api/gluon-api/comments{/number}",
+  issue_comment_url: "https://api.github.com/repos/gluon-api/gluon-api/issues/comments{/number}",
+  contents_url: "https://api.github.com/repos/gluon-api/gluon-api/contents/{+path}",
+  compare_url: "https://api.github.com/repos/gluon-api/gluon-api/compare/{base}...{head}",
   merges_url: "https://api.github.com/repos/gluon-api/gluon-api/merges",
-  archive_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/{archive_format}{/ref}",
+  archive_url: "https://api.github.com/repos/gluon-api/gluon-api/{archive_format}{/ref}",
   downloads_url: "https://api.github.com/repos/gluon-api/gluon-api/downloads",
-  issues_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/issues{/number}",
+  issues_url: "https://api.github.com/repos/gluon-api/gluon-api/issues{/number}",
   pulls_url: "https://api.github.com/repos/gluon-api/gluon-api/pulls{/number}",
-  milestones_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/milestones{/number}",
+  milestones_url: "https://api.github.com/repos/gluon-api/gluon-api/milestones{/number}",
   notifications_url:
     "https://api.github.com/repos/gluon-api/gluon-api/notifications{?since,all,participating}",
   labels_url: "https://api.github.com/repos/gluon-api/gluon-api/labels{/name}",
-  releases_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/releases{/id}",
-  deployments_url:
-    "https://api.github.com/repos/gluon-api/gluon-api/deployments",
+  releases_url: "https://api.github.com/repos/gluon-api/gluon-api/releases{/id}",
+  deployments_url: "https://api.github.com/repos/gluon-api/gluon-api/deployments",
   created_at: new Date("2017-10-06T19:08:15Z"),
   updated_at: new Date("2022-06-23T07:56:25Z"),
   pushed_at: new Date("2019-08-13T08:41:21Z"),

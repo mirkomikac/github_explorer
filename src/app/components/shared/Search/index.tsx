@@ -13,12 +13,7 @@ export interface SearchItem {
   text: string;
 }
 
-const Search: React.FC<SearchProps> = ({
-  label = "",
-  items = [],
-  placeholder,
-  onItemSelected,
-}) => {
+const Search: React.FC<SearchProps> = ({ label = "", items = [], placeholder, onItemSelected }) => {
   const [term, setTerm] = useState("");
   const [debouncedTerm, setDebouncedTerm] = useState(term);
 
@@ -38,13 +33,13 @@ const Search: React.FC<SearchProps> = ({
     }
 
     const results = items.filter((i: SearchItem) =>
-      i.text.toLowerCase().includes(debouncedTerm.toLowerCase())
+      i.text.toLowerCase().includes(debouncedTerm.toLowerCase()),
     );
 
     const noResultsFound = !results || !results.length;
 
-    if(noResultsFound){
-      return <div style={{ visibility: "hidden"}} data-testid="search-results-no-results"/>;
+    if (noResultsFound) {
+      return <div style={{ visibility: "hidden" }} data-testid="search-results-no-results" />;
     }
 
     const liItemRender = (item: SearchItem) => (
@@ -68,13 +63,16 @@ const Search: React.FC<SearchProps> = ({
   return (
     <div className="search">
       <h1 className="search__label">{label}</h1>
-      <input data-testid="search-input"
+      <input
+        data-testid="search-input"
         className="search__input"
         placeholder={placeholder}
         type="text"
         onChange={onInputChanged}
       />
-      <div className="search__results" data-testid="search-results">{renderSearchResults()}</div>
+      <div className="search__results" data-testid="search-results">
+        {renderSearchResults()}
+      </div>
     </div>
   );
 };

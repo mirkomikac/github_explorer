@@ -6,7 +6,6 @@
   margin: 0 0 25px 0;
 }
 
-
 .app__footer {
   background-color: black;
 }
@@ -18,5 +17,5 @@
 .app__footer > p {
   color: white;
   font-size: 12px;
-  padding: 5px 0;  
+  padding: 5px 0;
 }

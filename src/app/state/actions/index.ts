@@ -1,11 +1,5 @@
-import {
-  SearchRepositoriesActionType,
-  StarRepositoryActionType,
-} from "../action-types";
-import {
-  Repository,
-  SearchRepositoriesResponse,
-} from "../../shared/apis/github/types";
+import { SearchRepositoriesActionType, StarRepositoryActionType } from "../action-types";
+import { Repository, SearchRepositoriesResponse } from "../../shared/apis/github/types";
 
 export interface SearchRepositoriesAction {
   type: SearchRepositoriesActionType.SEARCH_REPOSITORIES;
@@ -40,6 +34,4 @@ export interface UnstarRepositoryAction {
   payload: StarredRepositores;
 }
 
-export type StarredRepositoryAction =
-  | StarRepositoryAction
-  | UnstarRepositoryAction;
+export type StarredRepositoryAction = StarRepositoryAction | UnstarRepositoryAction;

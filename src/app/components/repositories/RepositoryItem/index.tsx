@@ -10,12 +10,9 @@ export interface RepositoryItemProps {
 }
 
 const RepositoryItem: React.FC<RepositoryItemProps> = ({ repository }) => {
-  const { id, name, full_name, owner, url, topics, license, description } =
-    repository;
+  const { id, name, full_name, owner, url, topics, license, description } = repository;
 
-  const starredRepositories = useTypedSelector(
-    (state) => state.starredRepositories
-  );
+  const starredRepositories = useTypedSelector((state) => state.starredRepositories);
 
   const { starRepository, unstarRepository } = useActions();
   const starred = starredRepositories[id];
@@ -41,15 +38,11 @@ const RepositoryItem: React.FC<RepositoryItemProps> = ({ repository }) => {
           <span className="repository__stars-count">{`⭐ ${repository.stargazers_count}`}</span>
           <p>{full_name}</p>
           <a href={url}>{url}</a>
-          <p className="repository__type">
-            {repository.private ? `Private repo` : `Public repo`}
-          </p>
+          <p className="repository__type">{repository.private ? `Private repo` : `Public repo`}</p>
 
           <p>{description}</p>
 
-          {hasTopics && (
-            <p className="repository__topics">[{topics.join(",")}]</p>
-          )}
+          {hasTopics && <p className="repository__topics">[{topics.join(",")}]</p>}
 
           {license && <p className="repository__licence">{license.name}</p>}
           {starred && (
