@@ -1,6 +1,6 @@
 {
   "name": "github_explorer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "App for exploring GitHub API",
   "homepage": "https://github.com/mirkomikac/github_explorer",
